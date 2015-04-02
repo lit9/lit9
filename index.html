@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Lit9 by npeditto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Lit9</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/npeditto/lit9" class="btn">View on GitHub</a>
+      <a href="https://github.com/npeditto/lit9/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/npeditto/lit9/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h3>
+<a id="what-is-lit9" class="anchor" href="#what-is-lit9" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>What is Lit9</strong>
+</h3>
+
+<p>Lit9 is an open source human computer interface; its main goal is to interact with a Linux system using a standard TV remote control as an input device.
+It is based on LIRC and it uses standard Xlib native functions to simulate mouse and keyboard (by means of predictive text technology) on the X Window System. 
+It currently works on Ubuntu 9.x/10.x; it is tested with a standard MCE Kit (remote control and receiver) and with a generic remote control (Toshiba_CT-90287-TV), with USB-UIRT2 as receiver.</p>
+
+<h3>
+<a id="software-requirements" class="anchor" href="#software-requirements" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Software requirements</strong>
+</h3>
+
+<p>To compile and run the current version of LIT 9 you should have Ubuntu 9.04, 9.10, 10.04 or 10.10.
+The main packages and libraries you need to install are:</p>
+
+<ul>
+<li>dialog</li>
+<li>libqt4-dev</li>
+<li>libqt4-core</li>
+<li>libqt4-gui</li>
+<li>libsqlite3-dev</li>
+<li>lirc</li>
+</ul>
+
+<p>The command you have to write in the shell to do everything in only one instruction is:</p>
+
+<p><code>sudo apt-get install dialog libqt4-dev libqt4-core libqt4-gui libsqlite3-dev lirc</code></p>
+
+<p>Or if there are any kind of problems:</p>
+
+<pre><code>`sudo apt-get install dialog`
+`sudo apt-get install libqt4-dev`
+`sudo apt-get install libqt4-core`
+`sudo apt-get install libqt4-gui`
+`sudo apt-get install libsqlite3-dev`
+`sudo apt-get install lirc`
+</code></pre>
+
+<h3>
+<a id="other-files-needed" class="anchor" href="#other-files-needed" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Other files needed</strong>
+</h3>
+
+<p>Inside /usr/share/lirc/ you have the configuration files of all remote controls you can use with lirc. We tested our system on a generic MCE (Windows Media Center) remote control with its relative receiver. 
+The configuration of the buttons we used is easily reachable with this path:</p>
+
+<pre><code> `gedit /usr/share/lirc/remotes/mceusb/lircd.conf.mceusb`
+</code></pre>
+
+<p>To use it you have to edit a file called hardware.conf:</p>
+
+<pre><code> `gedit /etc/lirc/hardware.conf`
+</code></pre>
+
+<p>which must looks like this:</p>
+
+<p><code>TRANSMITTER="Microsoft Windows Media Center V2 (usb) : Direct TV Receiver"</code>
+<code>TRANSMITTER_MODULES="lirc_dev mceusb"</code>
+<code>TRANSMITTER_DRIVER=""</code>
+<code>TRANSMITTER_DEVICE=""</code>
+<code>TRANSMITTER_SOCKET=""</code>
+<code>TRANSMITTER_LIRCD_CONF="directtv/general.conf"</code>
+<code>TRANSMITTER_LIRCD_ARGS=""</code>
+<code>START_LIRCD="true"</code>
+<code>START_LIRCMD=""</code>
+<code>LOAD_MODULES=""</code>
+<code>LIRCMD_CONF=""</code>
+<code>FORCE_NONINTERACTIVE_RECONFIGURATION="false"</code>
+<code>REMOTE="Windows Media Center Transceivers/Remotes (all)"</code>
+<code>REMOTE_MODULES="lirc_dev mceusb"</code>
+<code>REMOTE_DRIVER=""</code>
+<code>REMOTE_DEVICE="/dev/lirc0"</code>
+<code>REMOTE_SOCKET=""</code>
+<code>REMOTE_LIRCD_CONF="mceusb/lircd.conf.mceusb"</code>
+<code>REMOTE_LIRCD_ARGS=""</code></p>
+
+<p>If you want you can download this file and the one used for Toshiba_CT-90287-TV remote control with USB-UIRT2 as receiver you can visit: LiT9 Wiki</p>
+
+<h3>
+<a id="a-simple-test" class="anchor" href="#a-simple-test" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>A simple test</strong>
+</h3>
+
+<p>To test if everithing goes well you only have to connect the receiver to your computer and write this in the shell:</p>
+
+<p><code>name@pc-name:~$ irw</code></p>
+
+<p>now if you press any button on the remote control you should see something like this:</p>
+
+<p><code>name@pc-name:~$ 000000037ff07bfe 00 One mceusb</code>
+<code>name@pc-name:~$ 000000037ff07bfd 00 Two mceusb</code>
+<code>name@pc-name:~$ 000000037ff07bfc 00 Three mceusb</code></p>
+
+<h3>
+<a id="donwload-and-install" class="anchor" href="#donwload-and-install" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Donwload and Install</strong>
+</h3>
+
+<p>Last stable version tested and the user manual are available on: Download section</p>
+
+<p>To extract files:</p>
+
+<p><code>name@pc-name:~$ tar xvzf lit9_vX.X.tar.gz
+name@pc-name:~$ cd lit9_vX.X</code></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/npeditto/lit9">Lit9</a> is maintained by <a href="https://github.com/npeditto">npeditto</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-21030874-2");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
+
