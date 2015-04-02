@@ -1,34 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
-
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
+    <meta charset="UTF-8">
     <title>Lit9 by npeditto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
-
   <body>
-    <header>
-      <div class="inner">
-        <h1>Lit9</h1>
-        <h2></h2>
-        <a href="https://github.com/npeditto/lit9" class="button"><small>View project on</small> GitHub</a>
-      </div>
-    </header>
+    <section class="page-header">
+      <h1 class="project-name">Lit9</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/npeditto/lit9" class="btn">View on GitHub</a>
+      <a href="https://github.com/npeditto/lit9/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/npeditto/lit9/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h3>
+    <section class="main-content">
+      <h3>
 <a id="what-is-lit9" class="anchor" href="#what-is-lit9" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>What is Lit9</strong>
 </h3>
 
@@ -83,25 +74,25 @@ The configuration of the buttons we used is easily reachable with this path:</p>
 
 <p>which must looks like this:</p>
 
-<pre><code> * `TRANSMITTER="Microsoft Windows Media Center V2 (usb) : Direct TV Receiver"`
- * `TRANSMITTER_MODULES="lirc_dev mceusb"`
- * `TRANSMITTER_DRIVER=""`
- * `TRANSMITTER_DEVICE=""`
- * `TRANSMITTER_SOCKET=""`
- * `TRANSMITTER_LIRCD_CONF="directtv/general.conf"`
- * `TRANSMITTER_LIRCD_ARGS=""`
- * `START_LIRCD="true"`
- * `START_LIRCMD=""`
- * `LOAD_MODULES=""`
- * `LIRCMD_CONF=""`
- * `FORCE_NONINTERACTIVE_RECONFIGURATION="false"`
- * `REMOTE="Windows Media Center Transceivers/Remotes (all)"`
- * `REMOTE_MODULES="lirc_dev mceusb"`
- * `REMOTE_DRIVER=""`
- * `REMOTE_DEVICE="/dev/lirc0"`
- * `REMOTE_SOCKET=""`
- * `REMOTE_LIRCD_CONF="mceusb/lircd.conf.mceusb"`
- * `REMOTE_LIRCD_ARGS="" `
+<pre><code>  `TRANSMITTER="Microsoft Windows Media Center V2 (usb) : Direct TV Receiver"`
+  `TRANSMITTER_MODULES="lirc_dev mceusb"`
+  `TRANSMITTER_DRIVER=""`
+  `TRANSMITTER_DEVICE=""`
+  `TRANSMITTER_SOCKET=""`
+  `TRANSMITTER_LIRCD_CONF="directtv/general.conf"`
+  `TRANSMITTER_LIRCD_ARGS=""`
+  `START_LIRCD="true"`
+  `START_LIRCMD=""`
+  `LOAD_MODULES=""`
+  `LIRCMD_CONF=""`
+  `FORCE_NONINTERACTIVE_RECONFIGURATION="false"`
+  `REMOTE="Windows Media Center Transceivers/Remotes (all)"`
+  `REMOTE_MODULES="lirc_dev mceusb"`
+  `REMOTE_DRIVER=""`
+  `REMOTE_DEVICE="/dev/lirc0"`
+  `REMOTE_SOCKET=""`
+  `REMOTE_LIRCD_CONF="mceusb/lircd.conf.mceusb"`
+  `REMOTE_LIRCD_ARGS="" `
 </code></pre>
 
 <p>If you want you can download this file and the one used for Toshiba_CT-90287-TV remote control with USB-UIRT2 as receiver you can visit: LiT9 Wiki</p>
@@ -112,15 +103,17 @@ The configuration of the buttons we used is easily reachable with this path:</p>
 
 <p>To test if everithing goes well you only have to connect the receiver to your computer and write this in the shell:</p>
 
-<p><code>name@pc-name:~$ irw</code></p>
+<pre><code> `name@pc-name:~$ irw`
+</code></pre>
 
 <p>now if you press any button on the remote control you should see something like this:</p>
 
-<p><code>name@pc-name:~$ 000000037ff07bfe 00 One mceusb</code></p>
+<pre><code> `name@pc-name:~$ 000000037ff07bfe 00 One mceusb`
 
-<p><code>name@pc-name:~$ 000000037ff07bfd 00 Two mceusb</code></p>
+ `name@pc-name:~$ 000000037ff07bfd 00 Two mceusb`
 
-<p><code>name@pc-name:~$ 000000037ff07bfc 00 Three mceusb</code></p>
+ `name@pc-name:~$ 000000037ff07bfc 00 Three mceusb`
+</code></pre>
 
 <h3>
 <a id="donwload-and-install" class="anchor" href="#donwload-and-install" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Donwload and Install</strong>
@@ -130,9 +123,10 @@ The configuration of the buttons we used is easily reachable with this path:</p>
 
 <p>To extract files:</p>
 
-<p>`name@pc-name:~$ tar xvzf lit9_vX.X.tar.gz</p>
+<pre><code> `name@pc-name:~$ tar xvzf lit9_vX.X.tar.gz
 
-<p>name@pc-name:~$ cd lit9_vX.X`</p>
+ name@pc-name:~$ cd lit9_vX.X`
+</code></pre>
 
 <h3>
 <a id="notes" class="anchor" href="#notes" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Notes</strong>
@@ -141,9 +135,10 @@ The configuration of the buttons we used is easily reachable with this path:</p>
 <p>With other remote controls and receivers you have to download the lirc package which is on: <a href="http://www.lirc.org/">http://www.lirc.org/</a> and also to see which is the right configuration for your system. 
 Read the INSTALL file inside the package to start the configuration. The main variable you have to set are: </p>
 
-<p><code>REMOTE_MODULES (modules to let your receiver talk with your pc)</code></p>
+<pre><code> `REMOTE_MODULES (modules to let your receiver talk with your pc) `
 
-<p><code>REMOTE_LIRCD_CONF (where is the configuration of your remote control)</code></p>
+ `REMOTE_LIRCD_CONF (where is the configuration of your remote control)`
+</code></pre>
 
 <h3>
 <a id="about-us" class="anchor" href="#about-us" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>About us</strong>
@@ -165,24 +160,14 @@ Read the INSTALL file inside the package to start the configuration. The main va
 <li>Fabio Verboso: <a href="mailto:fabio.verboso@gmail.com">fabio.verboso@gmail.com</a>
 </li>
 </ul>
-        </section>
 
-        <aside id="sidebar">
-          <a href="https://github.com/npeditto/lit9/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/npeditto/lit9/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/npeditto/lit9">Lit9</a> is maintained by <a href="https://github.com/npeditto">npeditto</a>.</span>
 
-          <p class="repo-owner"><a href="https://github.com/npeditto/lit9"></a> is maintained by <a href="https://github.com/npeditto">npeditto</a>.</p>
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
 
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
-    </div>
+    </section>
 
             <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
@@ -197,3 +182,4 @@ Read the INSTALL file inside the package to start the configuration. The main va
 
   </body>
 </html>
+
